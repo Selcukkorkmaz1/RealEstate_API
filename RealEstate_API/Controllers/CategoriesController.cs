@@ -46,8 +46,5 @@ namespace RealEstate_API.Controllers
             return Ok(values);
         }
 
-
-        
-       
     }
 }
