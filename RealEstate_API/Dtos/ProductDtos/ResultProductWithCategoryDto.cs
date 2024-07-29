@@ -8,5 +8,8 @@
         public string ProductCity { get; set; }
         public string ProductDistrict { get; set; }
         public string CategoryName { get; set; }
+        public string ProductImage { get; set; }
+        public string ProductType { get; set; }
+        public string ProductAddress { get; set; }
     }
 }
