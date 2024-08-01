@@ -1,0 +1,52 @@
+﻿@model List<RealEstate_UI.Dtos.ProductDtos.ResultProductDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="container-fluid pt-4 px-4">
+	<div class="row g-4">
+		<div class="col-12">
+			<div class="bg-light rounded h-100 p-4">
+				<h6 class="mb-4">Product List</h6>
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Title</th>
+								<th scope="col">City</th>
+								<th scope="col">District</th>
+								<th scope="col">Category</th>
+								<th scope="col">Price</th>
+								<th scope="col">Type</th>
+								<th scope="col">Delete</th>
+								<th scope="col">Update</th>
+								<th scope="col">See on Website</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var item in Model)
+							{
+								<tr>
+									<td>@item.productID</td>
+									<td>@item.productTitle</td>
+									<td>@item.productCity</td>
+									<td>@item.productDistrict</td>
+									<td>@item.productPrice</td>
+									<td>@item.ProductType</td>
+									<td><a href="/Product/DeleteProduct/@item.productID" class="btn btn-outline-danger">Delete</a></td>
+									<td><a href="/Product/UpdateProduct/@item.productID" class="btn btn-outline-success">Update</a></td>
+									<td><a href="/Product/ProductDetail/@item.productID" class="btn btn-outline-primary">See on WebSite</a></td>
+								</tr>
+							}
+						</tbody>
+					</table>
+					<a href="/Product/CreateProduct/" class="btn btn-outline-info">Create Product</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
