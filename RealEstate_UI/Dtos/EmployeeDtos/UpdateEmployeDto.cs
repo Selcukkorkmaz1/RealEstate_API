@@ -1,6 +1,6 @@
-﻿namespace RealEstate_API.Dtos.EmployeDtos
+﻿namespace RealEstate_UI.Dtos.EmployeeDtos
 {
-	public class GetByIdEmployeDto
+	public class UpdateEmployeDto
 	{
 		public int EmployeID { get; set; }
 		public string EmployeName { get; set; }

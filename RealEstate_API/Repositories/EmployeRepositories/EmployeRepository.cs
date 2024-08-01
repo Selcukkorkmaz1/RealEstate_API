@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using RealEstate_API.Dtos.CategoryDtos;
 using RealEstate_API.Dtos.EmployeDtos;
 using RealEstate_API.Models.DapperContext;
 
@@ -18,10 +17,10 @@ namespace RealEstate_API.Repositories.EmplooyeRepositories
 			string query = "insert into Employee (EmployeName,EmployeTitle,EmployeMail,EmployePhone,EmployeImageUrl,EmployeStatus) values (@name,@title,@mail,@phone,@url,@status)";
 			var parameters = new DynamicParameters();
 			parameters.Add("@name", createEmploye.EmployeName);
-			parameters.Add("@name", createEmploye.EmployeTitle);
-			parameters.Add("@name", createEmploye.EmployeMail);
-			parameters.Add("@name", createEmploye.EmployePhone);
-			parameters.Add("@name", createEmploye.EmployeImageUrl);
+			parameters.Add("@title", createEmploye.EmployeTitle);
+			parameters.Add("@mail", createEmploye.EmployeMail);
+			parameters.Add("@phone", createEmploye.EmployePhone);
+			parameters.Add("@url", createEmploye.EmployeImageUrl);
 			parameters.Add("@status", true);
 			using (var connection = _context.CreateConnection())
 			{

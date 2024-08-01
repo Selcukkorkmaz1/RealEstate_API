@@ -1,8 +1,8 @@
-﻿namespace RealEstate_API.Dtos.EmployeDtos
+﻿namespace RealEstate_UI.Dtos.EmployeeDtos
 {
-	public class GetByIdEmployeDto
+	public class CreateEmployeDto
 	{
-		public int EmployeID { get; set; }
+		
 		public string EmployeName { get; set; }
 		public string EmployeTitle { get; set; }
 		public string EmployeMail { get; set; }
