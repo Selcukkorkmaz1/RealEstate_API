@@ -31,9 +31,9 @@ namespace RealEstate_API.Repositories.CategoryRepositories
 
         public async void DeleteCategory(int id)
         {
-            string query = "Delete from Category where CategoryID=@Id";
+            string query = "Delete from Category where CategoryID=@id";
             var parameters = new DynamicParameters();
-            parameters.Add("@Id", id);
+            parameters.Add("@id", id);
             using (var connection = _context.CreateConnection())
             {
                 await connection.ExecuteAsync(query, parameters);
