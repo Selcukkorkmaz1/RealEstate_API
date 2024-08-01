@@ -20,7 +20,7 @@
 					<input type="type" asp-for="productDistrict" class="form-control" />
 					<br />
 					<label>Category</label>
-					<input type="type" asp-for="categoryName" class="form-control" />
+					@Html.DropDownListFor(x=>x.categoryID,(List<SelectListItem>)ViewBag.v,new{@class="form-control"})
 					<br />
 					<label>Price</label>
 					<input type="type" asp-for="productPrice" class="form-control" />
