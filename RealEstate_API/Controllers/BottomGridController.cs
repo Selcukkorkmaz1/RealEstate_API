@@ -29,7 +29,7 @@ namespace RealEstate_API.Controllers
             _bottomGridRepository.CreateBottomGrid(createBottomGrid);
             return Ok("Kategori Başarılı Bir Şekilde Eklendi");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBottomGrid(int id)
         {
             _bottomGridRepository.DeleteBottomGrid(id);

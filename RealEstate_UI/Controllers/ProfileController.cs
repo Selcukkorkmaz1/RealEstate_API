@@ -2,7 +2,7 @@
 
 namespace RealEstate_UI.Controllers
 {
-    public class ProfileController1 : Controller
+    public class ProfileController : Controller
     {
         public IActionResult Index()
         {

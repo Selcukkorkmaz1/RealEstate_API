@@ -29,7 +29,7 @@ namespace RealEstate_API.Controllers
 			_popLocationRepository.CreatePopLocation(createPopLocation);
 			return Ok("Location Başarılı Bir Şekilde Eklendi");
 		}
-		[HttpDelete]
+		[HttpDelete ("{id}")]
 		public async Task<IActionResult> DeletePopLocation(int id)
 		{
 			_popLocationRepository.DeletePopLocation(id);
