@@ -1,0 +1,35 @@
+﻿@model RealEstate_UI.Dtos.EmployeeDtos.UpdateEmployeDto
+
+@{
+    ViewData["Title"] = "UpdateEmploye";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="container-fluid pt-4 px-4">
+	<div class="row g-4">
+		<div class="col-12">
+			<div class="bg-light rounded h-100 p-4">
+				<h6 class="mb-4">Update Employe</h6>
+				<form method="post">
+					<input type="hidden" asp-for="EmployeID" />
+					<label>Employe Name</label>
+					<input type="type" asp-for="EmployeName" class="form-control" />
+					<br />
+					<label>Title</label>
+					<input type="type" asp-for="EmployeTitle" class="form-control" />
+					<br />
+					<label>Mail</label>
+					<input type="email" asp-for="EmployeMail" class="form-control" />
+					<br />
+					<label>Phone</label>
+					<input type="tel" asp-for="EmployePhone" class="form-control" />
+					<br />
+					<label>ImageUrl</label>
+					<input type="type" asp-for="EmployeImageUrl" class="form-control" />
+					<br />
+					<button class="btn btn-primary">Save Employe</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,7 +1,8 @@
 ﻿@model List<RealEstate_UI.Dtos.EmployeeDtos.ResultEmployeDto>
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Admin/Index.cshtml";
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Admin/Index.cshtml";
+	int count = 0;
 }
 
 <div class="container-fluid pt-4 px-4">
@@ -27,21 +28,22 @@
 						<tbody>
 							@foreach (var item in Model)
 							{
+								count++;
 								<tr>
-									<th scope="row">@item.EmployeID</th>
+									<th scope="row">@count</th>
 									<td>@item.EmployeName</td>
 									<td>@item.EmployeTitle</td>
 									<td>@item.EmployeMail</td>
 									<td>@item.EmployePhone</td>
 									<td>@item.EmployeImageUrl</td>
 									<td>@item.EmployeStatus</td>
-									<td><a href="/Employee/DeleteEmployee/@item.EmployeID" class="btn btn-outline-danger">Delete</a></td>
-									<td><a href="/Employee/UpdateEmployee/@item.EmployeID" class="btn btn-outline-success">Update</a></td>
+									<td><a href="/Employee/DeleteEmploye/@item.EmployeID" class="btn btn-outline-danger">Delete</a></td>
+									<td><a href="/Employee/UpdateEmploye/@item.EmployeID" class="btn btn-outline-success">Update</a></td>
 								</tr>
 							}
 						</tbody>
 					</table>
-					<a href="/Employee/CreateEmployee/" class="btn btn-outline-info">Create Employee</a>
+					<a href="/Employee/CreateEmploye/" class="btn btn-outline-info">Create Employee</a>
 				</div>
 			</div>
 		</div>
