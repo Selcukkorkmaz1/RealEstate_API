@@ -26,7 +26,7 @@ namespace RealEstate_API.Controllers
             _whoWeAreRepository.CreateWhoWeAre(createWhoWeAre);
             return Ok("Hakkımızda Başarılı Bir Şekilde Eklendi");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteWhoWeAre(int id)
         {
             _whoWeAreRepository.DeleteWhoWeAre(id);
