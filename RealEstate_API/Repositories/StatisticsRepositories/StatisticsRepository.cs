@@ -133,7 +133,7 @@ namespace RealEstate_API.Repositories.StatisticsRepositories
 
 		public string NewestBuildingYear()
 		{
-			string query = "Select Top(1) BuildYear From ProductDetails Order By BuildYear-1 Desc";
+			string query = "Select Top(1) BuildYear From ProductDetails Order By BuildYear-1 Asc";
 			using (var connection = _context.CreateConnection())
 			{
 				var values = connection.QueryFirstOrDefault<string>(query);
@@ -143,7 +143,7 @@ namespace RealEstate_API.Repositories.StatisticsRepositories
 
 		public string OldestBuildingYear()
 		{
-			string query = "Select Top(1) BuildYear From ProductDetails Order By BuildYear-1 Asc";
+			string query = "Select Top(1) BuildYear From ProductDetails Order By BuildYear-1 Desc";
 			using (var connection = _context.CreateConnection())
 			{
 				var values = connection.QueryFirstOrDefault<string>(query);
