@@ -28,7 +28,7 @@ namespace RealEstate_API.Controllers
             _servicesRepository.CreateServices(createServicesDto);
             return Ok("Service Başarılı Bir Şekilde Eklendi");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteService(int id)
         {
             _servicesRepository.DeleteServices(id);
