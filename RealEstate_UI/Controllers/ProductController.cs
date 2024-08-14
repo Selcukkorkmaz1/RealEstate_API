@@ -46,5 +46,27 @@ namespace RealEstate_UI.Controllers
 
 			return View();
 		}
+
+		public async Task<IActionResult> ProductDealOfTheDayStatusChangeToFalse(int id)
+		{
+			var client = _httpClientFactory.CreateClient();
+			var responseMessage = await client.GetAsync("https://localhost:44327/api/Product/ProductDealOfTheDayStatusChangeToFalse/" + id);
+			if (responseMessage.IsSuccessStatusCode)
+			{
+				return RedirectToAction("Index");
+			}
+			return View();
+		}
+
+		public async Task<IActionResult> ProductDealOfTheDayStatusChangeToTrue(int id)
+		{
+			var client = _httpClientFactory.CreateClient();
+			var responseMessage = await client.GetAsync("https://localhost:44327/api/Product/ProductDealOfTheDayStatusChangeToTrue/" + id);
+			if (responseMessage.IsSuccessStatusCode)
+			{
+				return RedirectToAction("Index");
+			}
+			return View();
+		}
 	}
 }

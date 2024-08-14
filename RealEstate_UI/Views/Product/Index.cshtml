@@ -1,7 +1,8 @@
 ﻿@model List<RealEstate_UI.Dtos.ProductDtos.ResultProductDto>
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Admin/Index.cshtml";
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Admin/Index.cshtml";
+	int count = 0;
 }
 
 <div class="container-fluid pt-4 px-4">
@@ -17,27 +18,40 @@
 								<th scope="col">Title</th>
 								<th scope="col">City</th>
 								<th scope="col">District</th>
-								<th scope="col">Category</th>
 								<th scope="col">Price</th>
 								<th scope="col">Type</th>
+								<th scope="col">Category</th>
 								<th scope="col">Delete</th>
 								<th scope="col">Update</th>
 								<th scope="col">See on Website</th>
+								<th scope="col">DealOfTheDay</th>
 							</tr>
 						</thead>
 						<tbody>
-							@foreach (var item in Model)
+							@foreach(var item in Model)
 							{
+								count++;
 								<tr>
-									<td>@item.productID</td>
+									<td>@count</td>
 									<td>@item.productTitle</td>
 									<td>@item.productCity</td>
 									<td>@item.productDistrict</td>
 									<td>@item.productPrice</td>
 									<td>@item.ProductType</td>
+									<td>@item.categoryName</td>
 									<td><a href="/Product/DeleteProduct/@item.productID" class="btn btn-outline-danger">Delete</a></td>
 									<td><a href="/Product/UpdateProduct/@item.productID" class="btn btn-outline-success">Update</a></td>
 									<td><a href="/Product/ProductDetail/@item.productID" class="btn btn-outline-primary">See on WebSite</a></td>
+									<td>
+										@if (item.DealOfTheDay == true)
+										{
+											<a href="/Product/ProductDealOfTheDayStatusChangeToFalse/@item.productID" class="btn btn-outline-secondary">Pasif Yap</a>
+										}
+										@if (item.DealOfTheDay == false)
+										{
+											<a href="/Product/ProductDealOfTheDayStatusChangeToTrue/@item.productID" class="btn btn-outline-warning">Aktif Yap</a>
+										}
+									</td>
 								</tr>
 							}
 						</tbody>

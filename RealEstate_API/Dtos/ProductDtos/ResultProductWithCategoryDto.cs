@@ -11,5 +11,6 @@
         public string ProductImage { get; set; }
         public string ProductType { get; set; }
         public string ProductAddress { get; set; }
+        public bool DealOfTheDay { get; set; }
     }
 }
