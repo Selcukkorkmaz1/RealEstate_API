@@ -33,7 +33,17 @@ namespace RealEstate_API.Repositories.ProductRepositories
             }
         }
 
-		public async Task ProductDealOfTheDayStatusChangeToFalse(int id)
+        public async Task<List<ResultLast5ProductWithCategoryDto>> GetLast5ProductAsync()
+        {
+            string query = "Select Top(5) ProductID,ProductTitle,ProductPrice,ProductCity,ProductDistrict,ProductCategory,CategoryName,Date From Product Inner Join Category On Product.ProductCategory=Category.CategoryID Where ProductType='Kiralık' Order By ProductID Desc";
+            using (var connection = _context.CreateConnection())
+            {
+                var values = await connection.QueryAsync<ResultLast5ProductWithCategoryDto>(query);
+                return values.ToList();
+            }
+        }
+
+        public async Task ProductDealOfTheDayStatusChangeToFalse(int id)
 		{
 			string query = "Update Product Set DealOfTheDay=0 where ProductID=@productID";
 			var parameters = new DynamicParameters();
