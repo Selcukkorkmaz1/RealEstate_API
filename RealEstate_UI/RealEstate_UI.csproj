@@ -8,12 +8,15 @@
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.4" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Text.Encoding" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\EstateAgent\Data\" />
+    <Folder Include="Areas\EstateAgent\Models\" />
     <Folder Include="Views\Shared\Components\NewFolder\" />
   </ItemGroup>
 

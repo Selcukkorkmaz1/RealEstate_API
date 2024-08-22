@@ -33,6 +33,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSignalR();
 
+builder.Services.AddHttpClient();
 
 builder.Services.AddCors(opt =>
 {

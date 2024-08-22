@@ -64,5 +64,28 @@ namespace RealEstate_API.Repositories.ProductRepositories
 				await connection.ExecuteAsync(query, parameters);
 			}
 		}
-	}
+
+        public async Task<List<ResultProductAdvertListWithCategoryByEmployeeDto>> GetProductAdvertListByEmployeeAsyncByFalse(int id)
+        {
+            string query = "Select ProductID,ProductTitle,ProductPrice,ProductCity,ProductDistrict,ProductCategory,ProductImage,ProductType,ProductAddress,DealOfTheDay From Product inner join Category on Product.ProductCategory=Category.CategoryID where EmployeID=@employeeId and ProductStatus=0";
+            var parameters = new DynamicParameters();
+            parameters.Add("@employeeId", id);
+            using (var connection = _context.CreateConnection())
+            {
+                var values = await connection.QueryAsync<ResultProductAdvertListWithCategoryByEmployeeDto>(query, parameters);
+                return values.ToList();
+            }
+        }
+        public async Task<List<ResultProductAdvertListWithCategoryByEmployeeDto>> GetProductAdvertListByEmployeeAsyncByTrue(int id)
+        {
+            string query = "Select ProductID,ProductTitle,ProductPrice,ProductCity,ProductDistrict,ProductCategory,ProductImage,ProductType,ProductAddress,DealOfTheday From Product inner join Category on Product.ProductCategory=Category.CategoryID where EmployeID=@employeeId and ProductStatus=1";
+            var parameters = new DynamicParameters();
+            parameters.Add("@employeeId", id);
+            using (var connection = _context.CreateConnection())
+            {
+                var values = await connection.QueryAsync<ResultProductAdvertListWithCategoryByEmployeeDto>(query, parameters);
+                return values.ToList();
+            }
+        }
+    }
 }
