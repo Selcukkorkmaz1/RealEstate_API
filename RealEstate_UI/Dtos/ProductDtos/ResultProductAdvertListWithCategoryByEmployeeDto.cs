@@ -12,5 +12,6 @@
         public string ProductType { get; set; }
         public string ProductAddress { get; set; }
         public bool DealOfTheDay { get; set; }
+        public bool ProductStatus { get; set; }
     }
 }
