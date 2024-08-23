@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Admin/Index.cshtml";
+    Layout = "~/Areas/EstateAgent/Views/LayoutEstateAgent/Index.cshtml";
 }
 
 <div class="container-fluid pt-4 px-4">
@@ -11,7 +11,6 @@
             <!-- Sale & Revenue Start -->
             @await Component.InvokeAsync("_EstateAgentDashboardStatisticComponentPartial")
             <!-- Sale & Revenue End -->
-
             <!-- Sales Chart Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -36,11 +35,9 @@
                 </div>
             </div>
             <!-- Sales Chart End -->
-
             <!-- Recent Sales Start -->
             @await Component.InvokeAsync("_DashboardLast5ProductComponentPartial")
             <!-- Recent Sales End -->
-
             <!-- Widgets Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -60,8 +57,8 @@
                 </div>
             </div>
             <!-- Widgets End -->
-        
+
         </div>
-           
+
     </div>
 </div>
