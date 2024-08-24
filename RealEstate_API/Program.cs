@@ -12,6 +12,7 @@ using RealEstate_API.Repositories.WhoWeAreRepositories;
 using RealEstate_API.Repositories.ToDoListRepositories;
 using RealEstate_API.Hubs;
 using RealEstate_API.Repositories.EstateAgentRepositories.DashboardRepositories.StatisticRepositories;
+using RealEstate_API.Repositories.EstateAgentRepositories.DashboardRepositories.ChartRepositories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -28,6 +29,7 @@ builder.Services.AddTransient<IStatisticsRepository, StatisticsRepository>();
 builder.Services.AddTransient<IContactRepository, ContactRepository>();
 builder.Services.AddTransient<IToDoListRepository, ToDoListRepository>();
 builder.Services.AddTransient<IStatisticRepository, StatisticRepository>();
+builder.Services.AddTransient<IChartRepository, ChartRepository>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
