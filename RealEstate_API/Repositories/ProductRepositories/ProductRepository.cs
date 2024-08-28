@@ -78,7 +78,7 @@ namespace RealEstate_API.Repositories.ProductRepositories
         }
         public async Task<List<ResultProductAdvertListWithCategoryByEmployeeDto>> GetProductAdvertListByEmployeeAsyncByTrue(int id)
         {
-            string query = "Select ProductID,ProductTitle,ProductPrice,ProductCity,ProductDistrict,ProductCategory,ProductImage,ProductType,ProductAddress,DealOfTheday From Product inner join Category on Product.ProductCategory=Category.CategoryID where EmployeID=@employeeId and ProductStatus=1";
+            string query = "Select ProductID,ProductTitle,ProductPrice,ProductCity,ProductDistrict,ProductCategory,ProductImage,ProductType,ProductAddress,DealOfTheDay From Product inner join Category on Product.ProductCategory=Category.CategoryID where EmployeID=@employeeId and ProductStatus=1";
             var parameters = new DynamicParameters();
             parameters.Add("@employeeId", id);
             using (var connection = _context.CreateConnection())
