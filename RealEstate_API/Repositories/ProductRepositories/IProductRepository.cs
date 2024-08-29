@@ -11,6 +11,7 @@ namespace RealEstate_API.Repositories.ProductRepositories
 		Task ProductDealOfTheDayStatusChangeToTrue(int id);
 		Task ProductDealOfTheDayStatusChangeToFalse(int id);
         Task<List<ResultLast5ProductWithCategoryDto>> GetLast5ProductAsync();
+        Task CreateProduct(CreateProductDto createProductDto);
 
     }
 }

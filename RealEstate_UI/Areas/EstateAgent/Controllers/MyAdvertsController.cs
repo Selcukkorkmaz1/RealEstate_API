@@ -53,9 +53,9 @@ namespace RealEstate_UI.Areas.EstateAgent.Controllers
             var responseMessage = await client.GetAsync("https://localhost:44327/api/Categories");
 
             var jsonData = await responseMessage.Content.ReadAsStringAsync();
-            var values = JsonConvert.DeserializeObject<List<ResultCategoryDto>>(jsonData);
+            var Values = JsonConvert.DeserializeObject<List<ResultCategoryDto>>(jsonData);
 
-            List<SelectListItem> categoryValues = (from x in values.ToList()
+            List<SelectListItem> categoryValues = (from x in Values.ToList()
                                                    select new SelectListItem
                                                    {
                                                        Text = x.CategoryName,

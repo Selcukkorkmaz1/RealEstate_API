@@ -11,19 +11,19 @@
 				<h6 class="mb-4">Add New Ad Product</h6>
 				<form method="post">
 					<label>Product Title</label>
-					<input type="type" asp-for="productTitle" class="form-control" />
+					<input type="type" asp-for="ProductTitle" class="form-control" />
 					<br />
 					<label>City</label>
-					<input type="type" asp-for="productCity" class="form-control" />
+					<input type="type" asp-for="ProductCity" class="form-control" />
 					<br />
 					<label>District</label>
-					<input type="type" asp-for="productDistrict" class="form-control" />
+					<input type="type" asp-for="ProductDistrict" class="form-control" />
 					<br />
 					<label>Category</label>
-					@Html.DropDownListFor(x=>x.categoryID,(List<SelectListItem>)ViewBag.v,new{@class="form-control"})
+					@Html.DropDownListFor(x=>x.ProductCategory,(List<SelectListItem>)ViewBag.v,new{@class="form-control"})
 					<br />
 					<label>Price</label>
-					<input type="type" asp-for="productPrice" class="form-control" />
+					<input type="type" asp-for="ProductPrice" class="form-control" />
 					<br />
 					<label>Type</label>
 					<input type="type" asp-for="ProductType" class="form-control" />

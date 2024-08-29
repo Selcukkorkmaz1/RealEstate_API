@@ -1,7 +1,7 @@
-﻿namespace RealEstate_UI.Dtos.ProductDtos
+﻿namespace RealEstate_API.Dtos.ProductDtos
 {
-	public class CreateProductDto
-	{
+    public class CreateProductDto
+    {
         public string ProductTitle { get; set; }
         public int ProductPrice { get; set; }
         public string ProductCity { get; set; }

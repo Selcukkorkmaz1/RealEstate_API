@@ -87,5 +87,27 @@ namespace RealEstate_API.Repositories.ProductRepositories
                 return values.ToList();
             }
         }
+        public async Task CreateProduct(CreateProductDto createProductDto)
+        {
+            string query = "insert into Product (ProductTitle,ProductPrice,ProductCity,ProductDistrict,ProductImage,ProductAddress,ProductDescription,ProductType,DealOfTheDay,Date,ProductStatus,ProductCategory,EmployeID) values (@Title,@Price,@City,@District,@CoverImage,@Address,@Description,@Type,@DealOfTheDay,@AdvertisementDate,@ProductStatus,@ProductCategory,@EmployeeID)";
+            var parameters = new DynamicParameters();
+            parameters.Add("@Title", createProductDto.ProductTitle);
+            parameters.Add("@Price", createProductDto.ProductPrice);
+            parameters.Add("@City", createProductDto.ProductCity);
+            parameters.Add("@District", createProductDto.ProductDistrict);
+            parameters.Add("@CoverImage", createProductDto.ProductImage);
+            parameters.Add("@Address", createProductDto.ProductAddress);
+            parameters.Add("@Description", createProductDto.ProductDescription);
+            parameters.Add("@Type", createProductDto.ProductType);
+            parameters.Add("@DealOfTheDay", createProductDto.DealOfTheDay);
+            parameters.Add("@AdvertisementDate", createProductDto.Date);
+            parameters.Add("@ProductStatus", createProductDto.ProductStatus);
+            parameters.Add("@ProductCategory", createProductDto.ProductCategory);
+            parameters.Add("@EmployeeID", createProductDto.EmployeID);
+            using (var connection = _context.CreateConnection())
+            {
+                await connection.ExecuteAsync(query, parameters);
+            }
+        }
     }
-}
+} 
