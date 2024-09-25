@@ -66,6 +66,14 @@ namespace RealEstate_API.Controllers
             await _productRepository.CreateProduct(createProductDto);
             return Ok("İlan başarıyla eklendi");
         }
+        [HttpGet("GetProductByProductID")]
+        public async Task<IActionResult> GetProductByProductID(int id)
+        {
+            var values = await _productRepository.GetProductByProductID(id);
+                return Ok(values);
+        }
 
-    }
+		
+
+	}
 }
